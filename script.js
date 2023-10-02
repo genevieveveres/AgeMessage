@@ -2,8 +2,18 @@
 //     age = document.getElementById("age").value;
 // });
 
-let age = prompt("How old are you?");
+//tell button to listen for a click event
+let age;
+
+my_button.addEventListener("click", function(){
+    //grab the user input value
+    age = Number.parseInt(userInput.value);
+
+    userInput.value="";
+
 let message = "Don't lie to me.";
+
+if (!isNaN(age)) {
 
 if (-0.75 <= age && age < 0 ) {
     message = "Death Stranding, aka, Norman Reedus and the Fetus";
@@ -27,7 +37,15 @@ else if (18 <= age && age  < 21){
     message = "You're kind of an adult but let's face it, not really";
 }
 else if (21 <= age && age <= 116){
-    message = "You're a REAL adult now";
+    message = "You're a REAL adult, and death approacheth";
 }
 
-alert(message)
+}
+
+else {
+    message = "Enter a valid input";
+}
+
+age_group.innerText = message;
+
+})
